@@ -1,69 +1,84 @@
-# React + TypeScript + Vite
+# Project Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Folder Structure
+```
+project-root/
+│-- .storybook/         # Storybook configuration files
+│-- src/
+│   │-- components/     # Reusable React components
+│   │   │-- InputField.tsx
+│   │   │-- DataTable.tsx
+│   │-- stories/        # Storybook stories
+│   │   │-- InputField.stories.tsx
+│   │   │-- DataTable.stories.tsx
+│-- package.json        # Project dependencies and scripts
+│-- tsconfig.json       # TypeScript configuration
+│-- README.md           # Documentation (this file)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-link>
+   cd project-root
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run Storybook**
+   ```bash
+   npm run storybook
+   ```
+   This will start Storybook at [http://localhost:6006](http://localhost:6006).
+
+4. **Build the project**
+   ```bash
+   npm run build
+   ```
+
+5. **Run tests (if configured with Playwright or Jest)**
+   ```bash
+   npm test
+   ```
+
+## 📖 Description of Approach
+
+This project demonstrates **component-driven development** using **React, TypeScript, and Storybook**.
+
+- **InputField Component**  
+  A reusable input component with customizable props (e.g., label, type, placeholder).  
+  Example usage:
+  ```tsx
+  <InputField label="Username" placeholder="Enter your name" />
+  ```
+
+- **DataTable Component**  
+  A dynamic table component that accepts `data` and `columns` props for rendering structured data.  
+  Example usage:
+  ```tsx
+  <DataTable
+    data={[
+      { id: 1, name: "John Doe", age: 25 },
+      { id: 2, name: "Jane Smith", age: 30 }
+    ]}
+    columns={[
+      { header: "ID", accessor: "id" },
+      { header: "Name", accessor: "name" },
+      { header: "Age", accessor: "age" }
+    ]}
+  />
+  ```
+
+- **Storybook Integration**  
+  Each component has an associated `.stories.tsx` file for isolated testing and UI previews.
+
+## ✅ Key Features
+
+- React + TypeScript for strong typing and maintainability.  
+- Storybook for visual component development.  
+- Scalable folder structure for larger projects.  
+- Easy setup and extensibility.  
