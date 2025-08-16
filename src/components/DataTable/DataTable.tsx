@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
+import { useState } from "react";
 import type { DataTableProps, Column } from "./DataTable.types";
 
 export const DataTable = <T extends { id: string | number }>({

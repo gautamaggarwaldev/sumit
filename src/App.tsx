@@ -1,4 +1,3 @@
-import React from "react";
 import { DataTable } from "./components/DataTable/DataTable";
 import { InputField } from "./components/InputField/InputField";
 
