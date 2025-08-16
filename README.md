@@ -6,11 +6,15 @@ project-root/
 │-- .storybook/         # Storybook configuration files
 │-- src/
 │   │-- components/     # Reusable React components
-│   │   │-- InputField.tsx
-│   │   │-- DataTable.tsx
-│   │-- stories/        # Storybook stories
-│   │   │-- InputField.stories.tsx
-│   │   │-- DataTable.stories.tsx
+│   │   │-- InputField/
+            |-- InputField.stories.tsx
+            |-- InputField.tsx
+            |-- InputField.types.ts
+│   │   │-- DataTable.tsx/
+            |-- DataTable.stories.tsx
+            |-- DataTable.tsx
+            |-- DataTable.types.ts
+│   
 │-- package.json        # Project dependencies and scripts
 │-- tsconfig.json       # TypeScript configuration
 │-- README.md           # Documentation (this file)
