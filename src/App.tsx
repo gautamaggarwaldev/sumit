@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Input Field</h1>
-      <InputField />
+      <InputField label="Username" placeholder="Enter your name" />
       <h1 className="text-2xl font-bold mb-4">User DataTable</h1>
       <DataTable<User> data={data} columns={columns} selectable />
     </div>
